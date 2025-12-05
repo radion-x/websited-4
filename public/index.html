@@ -31,6 +31,11 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/mobile.css">
 
@@ -222,9 +227,9 @@
     <header>
         <nav>
             <div class="container nav-container">
-                <div class="logo">
-                    <a href="/" style="display: flex; align-items: center; text-decoration: none;">
-                        <img src="/images/green_2.png" alt="Websited" style="height: 50px; width: auto;">
+                <div class="nav-logo">
+                    <a href="/" class="nav-logo-link">
+                        <img src="/images/green_2.png" alt="Websited" class="nav-logo-img">
                     </a>
                 </div>
                 <ul class="nav-links">
@@ -252,7 +257,7 @@
                 <div class="nav-cta">
                     <a href="/contact/" class="btn btn-primary btn-sm">Get Started</a>
                 </div>
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -265,8 +270,8 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge-top">AI-Powered Growth Since 2000</div>
-                <h1>Dominate Your Market with <br>AI-Powered Marketing</h1>
+                <div class="hero-badge">AI-Powered Growth Since 2000</div>
+                <h1>Dominate Your Market with <br><span class="text-gradient">AI-Powered Marketing</span></h1>
                 <p class="hero-subtitle">Strategic Digital Solutions That Actually Drive Results</p>
                 <p class="hero-description">We combine 25+ years of marketing mastery with cutting-edge AI automation to transform businesses. Drive targeted traffic, skyrocket conversions, and dominate your competition.</p>
                 <div class="hero-buttons">
@@ -291,6 +296,7 @@
                     </div>
                 </div>
             </div>
+            <div class="hero-visual"></div>
         </div>
     </section>
 
@@ -391,11 +397,11 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services-section">
         <div class="container">
             <h2>Weaponize Your Marketing</h2>
             <p class="section-intro">Full-stack digital solutions powered by AI. Each service is designed to compound your growth and dominate your competition.</p>
-            <div class="service-grid">
+            <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🤖</div>
                     <h3>AI Automation</h3>
@@ -434,87 +440,105 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="how-it-works">
+    <section id="why-choose-us" class="services-section">
         <div class="container">
             <h2>Why Choose Websited?</h2>
             <p class="section-intro">We combine decades of expertise with cutting-edge AI technology to deliver measurable results that transform businesses.</p>
 
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">25+</div>
-                    <h3>Years of Experience</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-small">25+</div>
+                    <h4>Years of Experience</h4>
                     <p>Industry veterans who've seen it all. We've navigated every digital trend and economic shift, giving us unique insights into what actually works for sustainable growth.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">AI</div>
-                    <h3>Cutting-Edge Technology</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">AI</div>
+                    <h4>Cutting-Edge Technology</h4>
                     <p>We leverage the latest AI and automation tools to give your business an unfair advantage. From chatbots to predictive analytics, we implement solutions that scale.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">ROI</div>
-                    <h3>Results-Driven Approach</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">ROI</div>
+                    <h4>Results-Driven Approach</h4>
                     <p>Every strategy is built around one goal: maximizing your return on investment. We track, measure, and optimise constantly to ensure you're getting real results.</p>
                 </div>
             </div>
 
-            <div class="when-you-need">
+            <div class="quote-section quote-section-features">
                 <h3>Streamlining Success with Smart Solutions</h3>
-                <ul>
-                    <li>Proven track record with diverse industries and business sizes</li>
-                    <li>End-to-end solutions from strategy to execution</li>
-                    <li>Data-driven decision making backed by advanced analytics</li>
-                    <li>Scalable systems that grow with your business</li>
-                    <li>Transparent reporting and regular strategy sessions</li>
-                    <li>Dedicated account management and ongoing support</li>
+                <ul class="service-features">
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Proven track record with diverse industries and business sizes
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        End-to-end solutions from strategy to execution
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Data-driven decision making backed by advanced analytics
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Scalable systems that grow with your business
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Transparent reporting and regular strategy sessions
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Dedicated account management and ongoing support
+                    </li>
                 </ul>
-                <p class="note">Our integrated approach means all your marketing channels work together seamlessly, creating compound growth effects you can't achieve with isolated tactics.</p>
+                <p class="note text-secondary-mt">Our integrated approach means all your marketing channels work together seamlessly, creating compound growth effects you can't achieve with isolated tactics.</p>
             </div>
         </div>
     </section>
 
     <!-- Industry Solutions Section -->
-    <section id="industry-solutions" class="services">
+    <section id="industry-solutions" class="services-section">
         <div class="container">
             <h2>Industry-Specific Solutions</h2>
             <p class="section-intro">We understand that every industry has unique challenges and opportunities. Our tailored strategies deliver results across diverse sectors.</p>
-            <div class="service-grid">
+            <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🏥</div>
                     <h3>Healthcare & Medical</h3>
                     <p>Help patients find and book your services with HIPAA-compliant digital marketing. We specialize in medical practice SEO, patient acquisition funnels, and AI-powered appointment scheduling that reduces no-shows. Our healthcare clients see an average 40% increase in new patient inquiries within 90 days.</p>
-                    <a href="#healthcare" class="card-link">Learn more about healthcare marketing</a>
+                    <a href="#healthcare" class="btn btn-sm btn-secondary">Learn more</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🏠</div>
                     <h3>Real Estate</h3>
                     <p>Stand out in a competitive market with stunning property websites, automated lead nurturing, and hyper-local SEO strategies. We help real estate agents and agencies generate qualified buyer and seller leads through targeted campaigns. Our CRM automations ensure no lead goes cold while you focus on closing deals.</p>
-                    <a href="#real-estate" class="card-link">Learn more about real estate marketing</a>
+                    <a href="#real-estate" class="btn btn-sm btn-secondary">Learn more</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">⚖️</div>
                     <h3>Professional Services</h3>
                     <p>Establish authority and attract high-value clients for your law firm, accounting practice, or consulting business. We create thought leadership content strategies, optimise for high-intent keywords, and build referral systems that generate consistent leads. Our professional services clients typically see 3x return on their marketing investment.</p>
-                    <a href="#professional-services" class="card-link">Learn more about professional services marketing</a>
+                    <a href="#professional-services" class="btn btn-sm btn-secondary">Learn more</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔧</div>
                     <h3>Home Services</h3>
                     <p>Dominate local search results and keep your phone ringing with calls from homeowners in your service area. Whether you're a plumber, electrician, HVAC technician, or landscaper, we'll help you build a consistent flow of jobs. Our local SEO and Google Ads strategies are specifically designed for service-area businesses.</p>
-                    <a href="#home-services" class="card-link">Learn more about home services marketing</a>
+                    <a href="#home-services" class="btn btn-sm btn-secondary">Learn more</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🛒</div>
                     <h3>E-commerce & Retail</h3>
                     <p>Drive sales and maximize customer lifetime value with conversion-optimised online stores and strategic paid advertising. We help e-commerce brands scale profitably with data-driven product page optimisation, abandoned cart recovery, and customer retention campaigns. Our clients average 25% improvement in conversion rates.</p>
-                    <a href="#ecommerce" class="card-link">Learn more about e-commerce marketing</a>
+                    <a href="#ecommerce" class="btn btn-sm btn-secondary">Learn more</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🏨</div>
                     <h3>Hospitality & Tourism</h3>
                     <p>Fill rooms and tables with targeted campaigns that reach travelers and locals at the right moment. We specialize in reputation management, local SEO, and social media strategies that showcase your unique experience. Our hospitality clients see significant increases in direct bookings, reducing dependency on third-party platforms.</p>
-                    <a href="#hospitality" class="card-link">Learn more about hospitality marketing</a>
+                    <a href="#hospitality" class="btn btn-sm btn-secondary">Learn more</a>
                 </div>
             </div>
             <div class="cta-buttons">
@@ -524,160 +548,175 @@
     </section>
 
     <!-- Technology Stack Section -->
-    <section id="technology-stack" class="how-it-works">
+    <section id="technology-stack" class="services-section">
         <div class="container">
             <h2>Our Technology Stack</h2>
             <p class="section-intro">We leverage best-in-class tools and platforms to deliver exceptional results. Here's the technology powering your growth.</p>
 
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">AI</div>
-                    <h3>AI & Machine Learning</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-small">AI</div>
+                    <h4>AI & Machine Learning</h4>
                     <p><strong>GPT-4 & Claude:</strong> Power our intelligent chatbots and content generation systems that engage customers 24/7 with human-like conversations and create compelling marketing copy at scale.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">Web</div>
-                    <h3>Web Development</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">Web</div>
+                    <h4>Web Development</h4>
                     <p><strong>React, Next.js, WordPress & Webflow:</strong> We build lightning-fast, SEO-optimised websites using modern frameworks. From custom web applications to content-managed sites, we choose the right tool for your needs.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">Data</div>
-                    <h3>Analytics & Tracking</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">Data</div>
+                    <h4>Analytics & Tracking</h4>
                     <p><strong>GA4 & Mixpanel:</strong> Advanced analytics setups that track every meaningful interaction. We configure custom events, conversion funnels, and attribution models so you understand exactly what's driving results.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">CRM</div>
-                    <h3>CRM & Automation</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">CRM</div>
+                    <h4>CRM & Automation</h4>
                     <p><strong>GoHighLevel & HubSpot:</strong> Powerful CRM platforms that automate your entire customer journey. From lead capture to nurture sequences to sales pipeline management, we build systems that convert.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">Ads</div>
-                    <h3>Paid Advertising</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">Ads</div>
+                    <h4>Paid Advertising</h4>
                     <p><strong>Google Ads & Meta Ads:</strong> Strategic paid media campaigns that reach your ideal customers at scale. We manage everything from search and display to social advertising with continuous optimisation for ROAS.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">SEO</div>
-                    <h3>SEO Tools</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">SEO</div>
+                    <h4>SEO Tools</h4>
                     <p><strong>Ahrefs, SEMrush & Screaming Frog:</strong> Enterprise-grade SEO tools for comprehensive keyword research, competitor analysis, technical audits, and backlink monitoring to dominate search rankings.</p>
                 </div>
             </div>
 
-            <div class="when-you-need">
+            <div class="quote-section quote-section-features">
                 <h3>Platform Agnostic, Results Focused</h3>
-                <p>We're not tied to any single platform or technology. We select the best tools based on your specific requirements, budget, and goals. Whether you need a simple WordPress site or a complex custom application, we have the expertise to deliver.</p>
+                <p class="text-secondary">We're not tied to any single platform or technology. We select the best tools based on your specific requirements, budget, and goals. Whether you need a simple WordPress site or a complex custom application, we have the expertise to deliver.</p>
             </div>
         </div>
     </section>
 
     <!-- Process Section -->
-    <section id="process" class="how-it-works">
+    <section id="process" class="services-section">
         <div class="container">
             <h2>Our Proven Growth Process</h2>
             <p class="section-intro">From discovery to domination, we follow a strategic process that delivers consistent results.</p>
 
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Discovery & Audit</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-small">1</div>
+                    <h4>Discovery & Audit</h4>
                     <p>We analyze your current digital presence, identify gaps, and uncover opportunities. Deep-dive into your industry, competitors, and target audience to build a solid foundation.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Strategy Development</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">2</div>
+                    <h4>Strategy Development</h4>
                     <p>Custom roadmap tailored to your goals and budget. We prioritize high-impact initiatives and create a timeline that balances quick wins with long-term growth.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Implementation</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">3</div>
+                    <h4>Implementation</h4>
                     <p>Our expert team executes the strategy with precision. From website optimisation to AI integration, we handle the technical heavy lifting while keeping you informed every step of the way.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3>Optimisation</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">4</div>
+                    <h4>Optimisation</h4>
                     <p>Continuous testing and refinement based on real data. We monitor performance metrics and make data-driven adjustments to maximize your ROI and improve results over time.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">5</div>
-                    <h3>Scale & Grow</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">5</div>
+                    <h4>Scale & Grow</h4>
                     <p>Once we've proven what works, we scale successful strategies and expand into new channels. Sustainable growth that compounds month over month.</p>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-number">6</div>
-                    <h3>Reporting & Analysis</h3>
+                <div class="feature-card">
+                    <div class="feature-icon-small">6</div>
+                    <h4>Reporting & Analysis</h4>
                     <p>Transparent monthly reporting with clear metrics and insights. Regular strategy sessions ensure we're always aligned with your evolving business objectives.</p>
                 </div>
             </div>
 
-            <div class="when-you-need">
+            <div class="quote-section quote-section-features-center">
                 <p><strong>Ready to Start Your Transformation?</strong><br>
                 Every great partnership starts with a conversation. Let's discuss your business goals, challenges, and opportunities.<br>
-                <a href="#consultation-form" class="phone-link">Book your free strategy session</a> and discover how we can help you dominate your market.</p>
+                <a href="#consultation-form" class="btn btn-primary btn-sm mt-1">Book your free strategy session</a></p>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
+    <section id="testimonials" class="services-section">
         <div class="container">
-            <div class="testimonials-header">
-                <div class="stars">*****</div>
+            <div class="text-center mb-xl">
+                <div class="stars stars-emerald">★★★★★</div>
                 <h2>What Is Everyone Saying?</h2>
-                <p>Real feedback from businesses we've helped grow</p>
+                <p class="section-intro">Real feedback from businesses we've helped grow</p>
             </div>
 
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="stars">*****</div>
-                    <p>"Websited has been a game-changer for our online presence. Their website design and development team took our vision and turned it into a stunning reality. The results speak for themselves - our website has never looked better and our conversion rate doubled."</p>
+                    <div class="testimonial-quote">★★★★★</div>
+                    <p class="testimonial-text">"Websited has been a game-changer for our online presence. Their website design and development team took our vision and turned it into a stunning reality. The results speak for themselves - our website has never looked better and our conversion rate doubled."</p>
                     <div class="testimonial-author">
-                        <strong>Goladria Kim</strong>
-                        <span>Fashion Designer</span>
+                        <div class="author-avatar">GK</div>
+                        <div class="author-info">
+                            <h4>Goladria Kim</h4>
+                            <p>Fashion Designer</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="stars">*****</div>
-                    <p>"Super & reliable service! Websited truly understands the importance of user experience. Our website was transformed into a user-friendly, visually appealing platform that has significantly improved our engagement metrics. They are our digital partners."</p>
+                    <div class="testimonial-quote">★★★★★</div>
+                    <p class="testimonial-text">"Super & reliable service! Websited truly understands the importance of user experience. Our website was transformed into a user-friendly, visually appealing platform that has significantly improved our engagement metrics. They are our digital partners."</p>
                     <div class="testimonial-author">
-                        <strong>Karen Hills</strong>
-                        <span>E-commerce Business Owner</span>
+                        <div class="author-avatar">KH</div>
+                        <div class="author-info">
+                            <h4>Karen Hills</h4>
+                            <p>E-commerce Business Owner</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="stars">*****</div>
-                    <p>"Fully satisfied with the service! The AI assistant they implemented has revolutionized our customer service. We're now available 24/7 and our team can focus on high-value tasks. ROI was positive within the first month."</p>
+                    <div class="testimonial-quote">★★★★★</div>
+                    <p class="testimonial-text">"Fully satisfied with the service! The AI assistant they implemented has revolutionized our customer service. We're now available 24/7 and our team can focus on high-value tasks. ROI was positive within the first month."</p>
                     <div class="testimonial-author">
-                        <strong>Michael Stevens</strong>
-                        <span>SaaS Founder</span>
+                        <div class="author-avatar">MS</div>
+                        <div class="author-info">
+                            <h4>Michael Stevens</h4>
+                            <p>SaaS Founder</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="stars">*****</div>
-                    <p>"Best service I ever got! Their SEO strategy took us from page 5 to page 1 in just 4 months. Our organic traffic is up 300% and we're getting quality leads every single day. The team is knowledgeable, responsive, and results-focused."</p>
+                    <div class="testimonial-quote">★★★★★</div>
+                    <p class="testimonial-text">"Best service I ever got! Their SEO strategy took us from page 5 to page 1 in just 4 months. Our organic traffic is up 300% and we're getting quality leads every single day. The team is knowledgeable, responsive, and results-focused."</p>
                     <div class="testimonial-author">
-                        <strong>Gomatica Fanades</strong>
-                        <span>Professional Services</span>
+                        <div class="author-avatar">GF</div>
+                        <div class="author-info">
+                            <h4>Gomatica Fanades</h4>
+                            <p>Professional Services</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="stars">*****</div>
-                    <p>"The CRM automation they set up has transformed how we handle leads. Nothing falls through the cracks anymore, and our sales team closes deals faster. We've seen a 40% increase in conversion rates since implementation."</p>
+                    <div class="testimonial-quote">★★★★★</div>
+                    <p class="testimonial-text">"The CRM automation they set up has transformed how we handle leads. Nothing falls through the cracks anymore, and our sales team closes deals faster. We've seen a 40% increase in conversion rates since implementation."</p>
                     <div class="testimonial-author">
-                        <strong>David Martinez</strong>
-                        <span>Real Estate Agency</span>
+                        <div class="author-avatar">DM</div>
+                        <div class="author-info">
+                            <h4>David Martinez</h4>
+                            <p>Real Estate Agency</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -685,7 +724,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="how-it-works">
+    <section id="faq" class="services-section">
         <div class="container">
             <h2>Frequently Asked Questions</h2>
             <p class="section-intro">Get answers to common questions about our services and how we can help your business grow.</p>
@@ -791,8 +830,8 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="cta" class="cta-section">
-        <div class="container">
+    <section id="cta" class="quote-section">
+        <div class="container text-center">
             <h2>Ready to Dominate Your Market?</h2>
             <p class="section-intro">Join the businesses that are winning with AI-powered marketing. Let's create your custom growth strategy and start seeing real results.</p>
             <div class="cta-buttons">
@@ -803,56 +842,55 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="services-section">
         <div class="container">
             <h2>Get In Touch</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
+            <div class="quote-wrapper">
+                <div class="quote-intro">
                     <h3>Contact Information</h3>
-                    <div class="info-item">
-                        <span class="info-icon">Location</span>
-                        <div>
-                            <strong>Address</strong>
-                            <p>2 Martin Place<br>Sydney, Australia</p>
+                    <div class="quote-features">
+                        <div class="quote-feature">
+                            <span class="feature-icon-small">📍</span>
+                            <div>
+                                <strong>Address</strong>
+                                <p>2 Martin Place, Sydney, Australia</p>
+                            </div>
+                        </div>
+                        <div class="quote-feature">
+                            <span class="feature-icon-small">✉️</span>
+                            <div>
+                                <strong>Email</strong>
+                                <p><a href="mailto:hello@websited.org" class="link-white">hello@websited.org</a></p>
+                            </div>
+                        </div>
+                        <div class="quote-feature">
+                            <span class="feature-icon-small">🌐</span>
+                            <div>
+                                <strong>Website</strong>
+                                <p><a href="https://websited.org" target="_blank" rel="noopener" class="link-white">websited.org</a></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <span class="info-icon">Email</span>
-                        <div>
-                            <strong>Email</strong>
-                            <p><a href="mailto:hello@websited.org" class="phone-link">hello@websited.org</a></p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">Web</span>
-                        <div>
-                            <strong>Website</strong>
-                            <p><a href="https://websited.org" class="phone-link" target="_blank">websited.org</a></p>
-                        </div>
-                    </div>
-                    <div class="business-hours">
-                        <strong>Follow Us</strong>
-                        <p><a href="https://instagram.com/websited" target="_blank" class="phone-link">Instagram</a></p>
-                        <p><a href="https://facebook.com/websited" target="_blank" class="phone-link">Facebook</a></p>
+                    <div class="social-links mt-2">
+                        <a href="https://instagram.com/websited" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">Instagram</a>
+                        <a href="https://facebook.com/websited" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">Facebook</a>
                     </div>
                 </div>
 
-                <div class="contact-cta">
+                <div class="quote-form-container">
                     <h3>Ready for Unprecedented Growth?</h3>
-                    <p>Book your free strategy consultation today. No obligation, no pressure-just expert advice and a clear roadmap to achieving your business goals.</p>
-                    <div class="cta-buttons">
-                        <a href="#consultation-form" class="btn btn-primary">Book Free Consultation</a>
-                    </div>
+                    <p class="text-secondary-mb">Book your free strategy consultation today. No obligation, no pressure-just expert advice and a clear roadmap to achieving your business goals.</p>
+                    <a href="#consultation-form" class="btn btn-primary btn-block">Book Free Consultation</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
                     <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-logo">
                         <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
                         <path d="M2 17l10 5 10-5"></path>
@@ -863,9 +901,9 @@
                     <p class="trading-info"><strong>Websited Digital Marketing</strong></p>
                     <p class="trading-info">ABN: XX XXX XXX XXX</p>
                 </div>
-                <div class="footer-section">
+                <div class="footer-col">
                     <h4>Quick Links</h4>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="#services">Services</a></li>
                         <li><a href="#industry-solutions">Industries</a></li>
                         <li><a href="#why-choose-us">Why Choose Us</a></li>
@@ -875,9 +913,9 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-col">
                     <h4>Services</h4>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="/service/ai-assistants/">AI Assistants</a></li>
                         <li><a href="/service/website-development/">Website Development</a></li>
                         <li><a href="/service/seo-local-seo/">SEO & Local SEO</a></li>
@@ -886,7 +924,7 @@
                         <li><a href="/service/growth-strategy-analytics/">Growth Strategy</a></li>
                     </ul>
                 </div>
-                <div class="footer-section" itemscope itemtype="https://schema.org/LocalBusiness">
+                <div class="footer-col" itemscope itemtype="https://schema.org/LocalBusiness">
                     <h4>Contact</h4>
                     <p>Email: <a href="mailto:hello@websited.org" class="footer-link" itemprop="email">hello@websited.org</a></p>
                     <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
@@ -900,8 +938,10 @@
                     </div>
                     <div class="footer-hours">
                         <strong>Follow Us:</strong>
-                        <p><a href="https://instagram.com/websited" target="_blank" class="footer-link">Instagram</a></p>
-                        <p><a href="https://facebook.com/websited" target="_blank" class="footer-link">Facebook</a></p>
+                        <div class="social-links mt-05">
+                            <a href="https://instagram.com/websited" target="_blank" rel="noopener">Instagram</a>
+                            <a href="https://facebook.com/websited" target="_blank" rel="noopener">Facebook</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -949,45 +989,5 @@
     <script src="js/formHandler.js"></script>
     <script src="js/aiChat.js"></script>
     <script src="js/main.js"></script>
-
-    <!-- FAQ Accordion Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('FAQ script loaded');
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            console.log('Found FAQ questions:', faqQuestions.length);
-
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    console.log('FAQ clicked');
-                    const faqItem = this.closest('.faq-item');
-                    const answer = faqItem.querySelector('.faq-answer');
-                    const isOpen = this.getAttribute('aria-expanded') === 'true';
-
-                    // Close all other FAQs
-                    document.querySelectorAll('.faq-question').forEach(q => {
-                        if (q !== this) {
-                            q.setAttribute('aria-expanded', 'false');
-                            const otherItem = q.closest('.faq-item');
-                            const otherAnswer = otherItem.querySelector('.faq-answer');
-                            if (otherAnswer) {
-                                otherAnswer.style.maxHeight = '0';
-                            }
-                        }
-                    });
-
-                    // Toggle current FAQ
-                    if (isOpen) {
-                        this.setAttribute('aria-expanded', 'false');
-                        answer.style.maxHeight = '0';
-                    } else {
-                        this.setAttribute('aria-expanded', 'true');
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                        console.log('Setting maxHeight to:', answer.scrollHeight + 'px');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
