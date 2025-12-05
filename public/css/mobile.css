@@ -690,6 +690,27 @@
         border-radius: 20px 20px 0 0;
     }
 
+    .chat-header h3 {
+        font-size: 1rem;
+    }
+
+    .chat-header-actions {
+        gap: 6px;
+    }
+
+    .chat-email,
+    .chat-reset,
+    .chat-close {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .chat-email svg,
+    .chat-reset svg {
+        width: 16px;
+        height: 16px;
+    }
+
     .chat-messages {
         height: calc(90vh - 180px);
         padding: 1rem;
