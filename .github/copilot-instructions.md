@@ -125,42 +125,56 @@ CHECK (source IN ('chatbot', 'contact_form', 'footer_form', 'download_chat'));
 ## Email Transcript Feature (Download Chat)
 
 ### Overview
-Allows users to download their AI chat transcript via email, capturing them as a lead with `source='download_chat'` in the database. Button appears after first AI response.
+Allows users to "download" their AI chat transcript via email, capturing them as a lead with `source='download_chat'` in the database. Header button appears greyed out initially and becomes active after first AI response.
 
 ### Frontend Implementation (`public/js/aiChat.js`)
 **Flow**:
-1. **Button appearance**: `showEmailTranscriptButton()` called after first AI response renders
-   - Checks if button already exists to prevent duplicates
-   - Inserts button above message input field
-   - Button text: "📧 Email Me This Chat"
+1. **Header button**: `#chatEmail` button in chat header (download icon SVG)
+   - Initially greyed out (`opacity: 0.4`, `cursor: not-allowed`)
+   - `enableEmailButton()` adds `.active` class after first AI response
+   - Only clickable when `.active` class present
 
 2. **Modal display**: Click triggers `showEmailModal()`
    - Creates glassmorphism modal with backdrop blur
-   - Email input field with validation
-   - Privacy notice with link to policy
-   - Send/Cancel buttons
+   - Title: "📥 Download Your Chat"
+   - Email input with validation
+   - "Send to Me 📥" button (green gradient)
 
 3. **Transcript submission**: `handleEmailTranscript()` sends data to API
    - Validates email format client-side
    - Packages transcript array (role + content objects)
    - POSTs to `/api/chat/email-transcript` with sessionId
-   - Shows success message with confetti animation 🎉
+   - Shows success message
 
-**HTML Structure** (dynamically created):
-```javascript
-// Button
-<button class="email-transcript-btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); ...">
-  📧 Email Me This Chat
-</button>
-
-// Modal
-<div class="email-transcript-modal">
-  <div class="email-transcript-content">
-    <h3>Get Your Chat Transcript</h3>
-    <input type="email" placeholder="Enter your email..." />
-    <button class="send-transcript-btn">Send Transcript</button>
-  </div>
+**HTML Structure** (in chat header):
+```html
+<div class="chat-header-actions">
+    <button id="chatEmail" class="chat-email" aria-label="Save chat transcript" title="Save chat transcript">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+    </button>
+    <button id="chatReset" class="chat-reset">...</button>
+    <button id="chatClose" class="chat-close">&times;</button>
 </div>
+```
+
+**CSS for header button** (`styles.css`):
+```css
+.chat-email {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.chat-email.active {
+    opacity: 1;
+    cursor: pointer;
+}
+.chat-email.active:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
 ```
 
 ### Backend Implementation (`routes/ai.js`)
@@ -472,7 +486,7 @@ if (toolCall.name === 'search_web') {
 - `server.js` → requires `routes/email.js`, `routes/ai.js`, `routes/callbacks.js`, `db/init.js`
 - `db/init.js` → runs `db/schema.sql` (fresh install) or `migrations/*.sql` (existing database)
 - `public/index.html` → loads `styles.css`, `formHandler.js`, `aiChat.js`, `main.js` (in order)
-- `public/service/index.html` → NEW main services page with 6 service cards
+- `public/service/index.html` → Main services page with 6 service cards
 - All 22 HTML pages → load `aiChat.js` for chat widget (homepage, about, contact, 6 services, 6 industries, blog, case studies, privacy)
 - All service pages → breadcrumb pattern with `margin-top: 80px` on container div
 - `routes/ai.js` → depends on `.env` vars: `OPENROUTER_*`, `BRAVE_SEARCH_API_KEY`, `POSTGRES_*`, `MAILGUN_*`
@@ -510,7 +524,7 @@ See `.env` for full list. Critical ones:
 10. **Function calling not working**: Check `BRAVE_SEARCH_API_KEY` in `.env`, verify tool definitions in `routes/ai.js`
 11. **Database migration not running**: Check `db/init.js` logs on container startup, verify migration files in `migrations/`
 12. **Admin dashboard login failing**: Verify `ADMIN_DASHBOARD_PASSWORD` in `.env`, check browser localStorage for `adminLoggedIn`
-13. **Email transcript button not appearing**: Check first AI response completed, verify `showEmailTranscriptButton()` call in `aiChat.js`
+13. **Email transcript button not appearing**: Check first AI response completed, verify `enableEmailButton()` call in `aiChat.js`
 
 ## Key Files to Reference
 - `server.js` - Express app setup, static file serving, API route mounting, database initialization
@@ -524,13 +538,15 @@ See `.env` for full list. Critical ones:
 - `db/schema.sql` - Fresh database schema with callback_requests and search_queries tables
 - `migrations/002_add_download_chat_source.sql` - Migration adding download_chat source type
 - `public/index.html` - Homepage with hero, services overview, FAQ, testimonials, contact form
-- `public/service/index.html` - Main services landing page with 6 service cards (NEW)
+- `public/service/index.html` - Main services landing page with 6 service cards
 - `public/admin/callbacks.html` - Admin dashboard with password auth, filtering, source badges
-- `public/js/aiChat.js:148-200` - Markdown formatter with unicode preprocessing
-- `public/js/aiChat.js:295-370` - Streaming response handler with `requestAnimationFrame` batching
-- `public/js/aiChat.js:790-990` - Email transcript feature (button, modal, submission)
+- `public/js/aiChat.js` - AI chat widget (1018 lines) with SSE streaming, markdown formatting, header-based download button, email transcript modal
+- `public/js/aiChat.js:enableEmailButton()` - Adds `.active` class to header button after first AI response
+- `public/js/aiChat.js:showEmailModal()` - Creates "Download Your Chat" modal for email capture
 - `public/js/main.js` - FAQ accordion functionality (single source of truth for event listeners)
 - `public/css/styles.css:1-50` - Design system custom properties (colors, gradients, spacing)
+- `public/css/styles.css:1440-1475` - Chat header button styles (`.chat-email`, `.chat-email.active`)
+- `public/css/mobile.css:688-710` - Responsive styles for chat header buttons (36px touch targets)
 - `.env` - Environment variables (OpenRouter API key, Mailgun config, system prompt, database, admin password)
 - `Dockerfile` - Multi-stage Node.js Alpine build with health checks for Coolify deployment
 
@@ -542,7 +558,13 @@ See `.env` for full list. Critical ones:
 5. **FAQ functionality fixed**: Removed inline `<script>` tag from `index.html` that duplicated `main.js` event listeners
 6. **Docker cache bypass**: Added `.buildtrigger` file and committed to force Coolify rebuild when no code changes exist
 7. **AI chat widget site-wide**: Added `<script src="/js/aiChat.js"></script>` to all 22 HTML pages
-8. **Email transcript feature**: Built complete lead capture system with button → modal → API → database → dual emails
+8. **Email transcript feature**: Built complete lead capture system with header button → modal → API → database → dual emails
 9. **Database migration for download_chat**: Created `002_add_download_chat_source.sql` migration, updated `db/init.js` to run on startup
 10. **Function calling tools**: Implemented search_web, fetch_webpage, request_callback with SSE status broadcasting
+11. **Header-based download button**: Refactored from in-chat button to persistent header button with greyed-out/active states
+    - `#chatEmail` button in `.chat-header-actions` with download SVG icon
+    - `.chat-email` CSS class (greyed out: opacity 0.4, not-allowed cursor)
+    - `.chat-email.active` CSS class (full opacity, pointer cursor, hover effects)
+    - `chatEmailBtn` property in constructor (replaces old `emailTranscriptButton`)
+    - `enableEmailButton()` method adds `.active` class after first AI response
 ````
