@@ -365,6 +365,9 @@ class AIChat {
     }
 
     addTypingIndicator() {
+        // Remove any existing typing indicator first
+        this.removeTypingIndicator();
+        
         const typingDiv = document.createElement('div');
         typingDiv.className = 'chat-message typing';
         typingDiv.id = 'typingIndicator';
@@ -382,7 +385,15 @@ class AIChat {
     removeTypingIndicator() {
         const typingIndicator = document.getElementById('typingIndicator');
         if (typingIndicator) {
-            typingIndicator.remove();
+            // Fade out smoothly
+            typingIndicator.style.opacity = '0';
+            typingIndicator.style.transform = 'translateY(-4px)';
+            typingIndicator.style.transition = 'opacity 0.15s, transform 0.15s';
+            setTimeout(() => {
+                if (typingIndicator.parentNode) {
+                    typingIndicator.remove();
+                }
+            }, 150);
         }
     }
 
@@ -483,15 +494,20 @@ class AIChat {
         this.isStreaming = true;
         this.userHasScrolled = false;
         let updatePending = false;
+        let cursorVisible = true;
 
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
 
+        // Blinking cursor HTML
+        const cursorHTML = '<span class="streaming-cursor"></span>';
+
         // Smooth update function with requestAnimationFrame for optimal rendering
         const smoothUpdate = () => {
             if (this.streamingMessageDiv && fullResponse) {
-                // Format and render in one smooth frame
-                this.streamingMessageDiv.innerHTML = this.formatMessage(fullResponse);
+                // Format and render with cursor
+                const formattedContent = this.formatMessage(fullResponse);
+                this.streamingMessageDiv.innerHTML = formattedContent + (this.isStreaming ? cursorHTML : '');
                 this.scrollToBottom();
             }
             updatePending = false;
@@ -518,8 +534,14 @@ class AIChat {
                         const data = line.slice(6);
                         
                         if (data === '[DONE]') {
-                            // Final render
-                            smoothUpdate();
+                            // Stop streaming and do final render without cursor
+                            this.isStreaming = false;
+                            
+                            // Final render without cursor
+                            if (this.streamingMessageDiv && fullResponse) {
+                                this.streamingMessageDiv.innerHTML = this.formatMessage(fullResponse);
+                                this.scrollToBottom();
+                            }
                             
                             if (fullResponse) {
                                 this.conversationHistory.push({
@@ -528,7 +550,6 @@ class AIChat {
                                 });
                             }
                             
-                            this.isStreaming = false;
                             this.streamingMessageDiv = null;
                             
                             // Enable email transcript button after first AI response
