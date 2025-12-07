@@ -1822,19 +1822,78 @@ header.scrolled .nav-container {
     animation: fadeUp 0.3s ease-out forwards;
 }
 
-.message.user {
+.message.user,
+.chat-message.user {
     align-self: flex-end;
     background: var(--gradient-primary);
     color: white;
     border-bottom-right-radius: 0.25rem;
 }
 
-.message.ai {
+.message.ai,
+.chat-message.ai {
     align-self: flex-start;
     background: var(--bg-surface);
     color: var(--text-primary);
     border-bottom-left-radius: 0.25rem;
     border: var(--border-light);
+}
+
+/* Chat message bubbles - matches JS class names */
+.chat-message {
+    max-width: 85%;
+    padding: 1rem 1.125rem;
+    border-radius: 1.125rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    position: relative;
+    animation: fadeUp 0.3s ease-out forwards;
+    word-wrap: break-word;
+}
+
+.chat-message.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    color: white;
+    border-bottom-right-radius: 0.25rem;
+    margin-left: 2rem;
+}
+
+.chat-message.ai {
+    align-self: flex-start;
+    background: #f8fafc;
+    color: #1e293b;
+    border-bottom-left-radius: 0.25rem;
+    border: 1px solid #e2e8f0;
+    margin-right: 2rem;
+}
+
+/* Suggested questions styling */
+.chat-suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+}
+
+.suggestion-btn {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #2563EB;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    font-family: var(--font-body);
+}
+
+.suggestion-btn:hover {
+    background: #f0f7ff;
+    border-color: #2563EB;
+    transform: translateX(4px);
 }
 
 .chat-form {
