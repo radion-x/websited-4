@@ -294,29 +294,29 @@
 
     /* ============================================
        PAGE HERO - MOBILE OPTIMIZED
-       Works with transparent non-sticky header
+       Comes right after fixed header
        ============================================ */
     .page-hero {
         min-height: auto;
-        margin-top: 0;
-        padding: 2.5rem 0 2.5rem 0;
+        margin-top: 60px !important;
+        padding: 2.5rem 1.25rem 2rem 1.25rem;
     }
 
     .page-hero-content {
-        padding: 0 1.25rem;
+        padding: 0;
     }
 
     .page-hero-label {
         font-size: 0.7rem;
         letter-spacing: 2px;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.625rem;
         opacity: 0.9;
     }
 
     .page-hero-title {
-        font-size: clamp(1.625rem, 7vw, 2.25rem) !important;
+        font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
         line-height: 1.15 !important;
-        margin-bottom: 0.875rem !important;
+        margin-bottom: 1rem !important;
     }
 
     .page-hero-title .highlight {
@@ -325,8 +325,8 @@
     }
 
     .page-hero-description {
-        font-size: 0.9rem;
-        line-height: 1.55;
+        font-size: 0.925rem;
+        line-height: 1.6;
         opacity: 0.9;
     }
 
@@ -411,72 +411,13 @@
     }
 
     /* ============================================
-       BREADCRUMBS - MOBILE
-       Clean single-line with ellipsis
+       BREADCRUMBS - HIDDEN ON MOBILE
+       Wastes space, hero provides context
        ============================================ */
     .breadcrumb-section,
     .service-breadcrumb,
-    [class*="breadcrumb"] {
-        margin-top: 70px !important;
-        padding: 0 !important;
-        min-height: 40px !important;
-        background: #f8fafc !important;
-        border-bottom: 1px solid #e2e8f0 !important;
-    }
-
-    .breadcrumb-section .container,
-    .service-breadcrumb .container,
-    .service-breadcrumb > .container {
-        min-height: 40px !important;
-        padding: 0 1rem !important;
-        display: flex !important;
-        align-items: center !important;
-    }
-
-    .breadcrumb,
-    .service-breadcrumb nav,
-    [aria-label="Breadcrumb"],
-    [aria-label="breadcrumb"] {
-        font-size: 0.75rem !important;
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        gap: 0 !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        color: #64748b !important;
-    }
-
-    .breadcrumb li,
-    .service-breadcrumb nav a,
-    .service-breadcrumb nav span {
-        display: inline !important;
-        white-space: nowrap !important;
-        font-size: 0.75rem !important;
-    }
-
-    .breadcrumb a,
-    .service-breadcrumb nav a {
-        color: #64748b !important;
-        text-decoration: none !important;
-    }
-
-    /* Breadcrumb separators */
-    .breadcrumb li::before,
-    .service-breadcrumb nav span[style*="margin"] {
-        margin: 0 0.375rem !important;
-        color: #94a3b8 !important;
-    }
-
-    /* Current page in breadcrumb */
-    .breadcrumb li:last-child,
-    .service-breadcrumb nav > span:last-child {
-        color: #1e293b !important;
-        font-weight: 500 !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        max-width: 140px !important;
+    div[class*="breadcrumb"] {
+        display: none !important;
     }
 
     /* ============================================
