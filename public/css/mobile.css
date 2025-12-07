@@ -168,24 +168,11 @@
         height: 60%;
     }
 
-    /* Hide the text ▾ character on dropdown parent links */
+    /* Dropdown parent links - style properly */
     .nav-item-dropdown > a,
     .dropdown > a {
-        text-indent: -9999px;
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
+        display: block !important;
     }
-
-    .nav-item-dropdown > a::before,
-    .dropdown > a::before {
-        text-indent: 0;
-        display: inline-block;
-    }
-
-    /* Set the visible text via ::before */
-    .nav-item-dropdown > a[href*="offers"]::before { content: "Offers"; }
-    .nav-item-dropdown > a[href*="service"]::before { content: "Services"; }
 
     /* Dropdown in mobile - hidden by default, reveal on tap */
     .nav-item-dropdown .dropdown-menu,
@@ -244,27 +231,6 @@
     .nav-item-dropdown .dropdown-menu a:hover,
     .dropdown .dropdown-menu a:hover {
         color: #2563EB !important;
-    }
-
-    /* Arrow indicator for dropdown parents */
-    .nav-item-dropdown > a::after,
-    .dropdown > a::after {
-        content: '';
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        border-right: 2px solid currentColor;
-        border-bottom: 2px solid currentColor;
-        transform: rotate(45deg);
-        margin-left: 8px;
-        margin-bottom: 3px;
-        transition: transform 0.3s ease;
-    }
-
-    .nav-item-dropdown.active > a::after,
-    .dropdown.active > a::after {
-        transform: rotate(-135deg);
-        margin-bottom: -2px;
     }
 
     .nav-cta {
