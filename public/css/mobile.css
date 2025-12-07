@@ -41,18 +41,22 @@
        Award-winning minimalist approach
        ============================================ */
     
-    /* Remove sticky header on mobile - let content breathe */
+    /* Fixed clean header on mobile */
     header {
-        position: absolute !important;
-        background: transparent !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: #ffffff !important;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
-        box-shadow: none !important;
-        border-bottom: none !important;
-        padding: 1rem 0 !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04) !important;
+        padding: 0.75rem 0 !important;
+        z-index: 1000 !important;
     }
 
-    /* Kill the pill design on mobile - full width clean bar */
+    /* Clean flat bar - no pill design */
     .nav-container {
         background: transparent !important;
         border: none !important;
@@ -293,30 +297,37 @@
        Works with transparent non-sticky header
        ============================================ */
     .page-hero {
-        min-height: 200px;
+        min-height: auto;
         margin-top: 0;
-        padding: 6rem 0 2rem 0;
+        padding: 2.5rem 0 2.5rem 0;
     }
 
     .page-hero-content {
-        padding: 1rem;
+        padding: 0 1.25rem;
     }
 
     .page-hero-label {
-        font-size: 0.75rem;
-        letter-spacing: 1.5px;
-        margin-bottom: 0.75rem;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+        opacity: 0.9;
     }
 
     .page-hero-title {
-        font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
-        line-height: 1.2;
-        margin-bottom: 0.75rem;
+        font-size: clamp(1.625rem, 7vw, 2.25rem) !important;
+        line-height: 1.15 !important;
+        margin-bottom: 0.875rem !important;
+    }
+
+    .page-hero-title .highlight {
+        display: block;
+        margin-bottom: 0.125rem;
     }
 
     .page-hero-description {
-        font-size: 0.95rem;
-        line-height: 1.5;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        opacity: 0.9;
     }
 
     /* ============================================
@@ -327,6 +338,7 @@
         min-height: 100vh;
         min-height: 100dvh;
         padding: 0 0 3rem 0;
+        padding-top: 70px;
         background-attachment: scroll;
         display: flex;
         align-items: center;
@@ -335,7 +347,7 @@
     .hero-content {
         text-align: center;
         padding: 0 1.5rem;
-        padding-top: 80px;
+        padding-top: 0;
     }
 
     .hero-badge-top {
@@ -400,31 +412,71 @@
 
     /* ============================================
        BREADCRUMBS - MOBILE
+       Clean single-line with ellipsis
        ============================================ */
-    .breadcrumb-section {
-        margin-top: 60px;
-        padding: 0.5rem 0;
+    .breadcrumb-section,
+    .service-breadcrumb,
+    [class*="breadcrumb"] {
+        margin-top: 70px !important;
+        padding: 0 !important;
+        min-height: 40px !important;
+        background: #f8fafc !important;
+        border-bottom: 1px solid #e2e8f0 !important;
     }
 
-    .breadcrumb-section .container {
-        min-height: auto !important;
-        padding: 0.75rem 1rem;
+    .breadcrumb-section .container,
+    .service-breadcrumb .container,
+    .service-breadcrumb > .container {
+        min-height: 40px !important;
+        padding: 0 1rem !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
-    .breadcrumb {
-        font-size: 0.813rem;
-        flex-wrap: wrap;
-        gap: 0.5rem;
+    .breadcrumb,
+    .service-breadcrumb nav,
+    [aria-label="Breadcrumb"],
+    [aria-label="breadcrumb"] {
+        font-size: 0.75rem !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 0 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        color: #64748b !important;
     }
 
-    .breadcrumb li {
-        display: flex;
-        align-items: center;
+    .breadcrumb li,
+    .service-breadcrumb nav a,
+    .service-breadcrumb nav span {
+        display: inline !important;
+        white-space: nowrap !important;
+        font-size: 0.75rem !important;
     }
 
     .breadcrumb a,
-    .breadcrumb li {
-        word-break: break-word;
+    .service-breadcrumb nav a {
+        color: #64748b !important;
+        text-decoration: none !important;
+    }
+
+    /* Breadcrumb separators */
+    .breadcrumb li::before,
+    .service-breadcrumb nav span[style*="margin"] {
+        margin: 0 0.375rem !important;
+        color: #94a3b8 !important;
+    }
+
+    /* Current page in breadcrumb */
+    .breadcrumb li:last-child,
+    .service-breadcrumb nav > span:last-child {
+        color: #1e293b !important;
+        font-weight: 500 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 140px !important;
     }
 
     /* ============================================
