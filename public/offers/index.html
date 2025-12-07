@@ -61,9 +61,9 @@
     <header>
         <nav>
             <div class="container nav-container">
-                <div class="logo">
-                    <a href="/" style="display: flex; align-items: center; text-decoration: none;">
-                        <img src="../images/green_2.png" alt="Websited" style="height: 50px; width: auto;">
+                <div class="nav-logo">
+                    <a href="/" class="nav-logo-link">
+                        <img src="../images/blue_site.png" alt="Websited" class="nav-logo-img">
                     </a>
                 </div>
                 <ul class="nav-links">
@@ -89,6 +89,10 @@
                     <li><a href="/contact/">Contact</a></li>
                 </ul>
                 <div class="nav-cta">
+                    <a href="tel:+61289588545" class="nav-phone">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>(02) 8958 8545</span>
+                    </a>
                     <a href="/contact/" class="btn btn-primary btn-sm">Get Started</a>
                 </div>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -101,13 +105,13 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" style="min-height: 60vh; background: var(--gradient-dark); position: relative;">
+    <section class="hero" style="min-height: 60vh; background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%); position: relative;">
         <div class="container" style="position: relative; z-index: 3; padding: 6rem 1rem;">
             <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; margin-bottom: 1.5rem; color: white;">
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; margin-bottom: 1.5rem; color: var(--text-primary);">
                     Exclusive Website Offers
                 </h1>
-                <p style="font-size: clamp(1.1rem, 2vw, 1.4rem); color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; line-height: 1.6;">
+                <p style="font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6;">
                     Affordable, professional website packages designed specifically for Australian businesses.
                     <span style="color: var(--accent-primary);">No hidden costs. No surprises.</span> Just great websites.
                 </p>
@@ -120,34 +124,34 @@
     </section>
 
     <!-- Benefits Bar -->
-    <section style="background: #16213e; padding: 2rem 0;">
+    <section style="background: var(--bg-surface); padding: 2rem 0;">
         <div class="container">
             <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; text-align: center;">
                 <div>
                     <div style="color: var(--accent-primary); font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">500+</div>
-                    <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem;">Websites Delivered</div>
+                    <div style="color: var(--text-secondary); font-size: 0.95rem;">Websites Delivered</div>
                 </div>
                 <div>
                     <div style="color: var(--accent-primary); font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">100%</div>
-                    <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem;">Australian Owned</div>
+                    <div style="color: var(--text-secondary); font-size: 0.95rem;">Australian Owned</div>
                 </div>
                 <div>
                     <div style="color: var(--accent-primary); font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">14 Days</div>
-                    <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem;">Average Delivery</div>
+                    <div style="color: var(--text-secondary); font-size: 0.95rem;">Average Delivery</div>
                 </div>
                 <div>
                     <div style="color: var(--accent-primary); font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">5 Star</div>
-                    <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem;">Google Reviews</div>
+                    <div style="color: var(--text-secondary); font-size: 0.95rem;">Google Reviews</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Offers Section -->
-    <section id="offers" style="padding: 6rem 0; background: var(--bg-primary);">
+    <section id="offers" style="padding: 6rem 0; background: var(--bg-surface);">
         <div class="container">
             <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900; margin-bottom: 1rem; color: white;">
+                <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900; margin-bottom: 1rem; color: var(--text-primary);">
                     Our Current Offers
                 </h2>
                 <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.7); max-width: 700px; margin: 0 auto;">
@@ -159,7 +163,7 @@
 
                 <!-- Simple Websites Offer -->
                 <div class="offer-card" style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border: 3px solid var(--accent-primary);">
-                    <div style="background: linear-gradient(135deg, var(--accent-primary) 0%, #A8D916 100%); padding: 1.5rem; text-align: center;">
+                    <div style="background: linear-gradient(135deg, var(--accent-primary) 0%, #3B82F6 100%); padding: 1.5rem; text-align: center;">
                         <div style="background: rgba(255, 255, 255, 0.2); display: inline-block; padding: 0.5rem 1.5rem; border-radius: 50px; margin-bottom: 1rem;">
                             <span style="color: #0a0a14; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Featured Offer</span>
                         </div>
@@ -219,7 +223,7 @@
                 <!--
                 <div class="offer-card" style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="background: var(--bg-section); padding: 1.5rem; text-align: center;">
-                        <h3 style="font-size: 2rem; font-weight: 900; color: white; margin: 0;">Coming Soon</h3>
+                        <h3 style="font-size: 2rem; font-weight: 900; color: var(--text-primary); margin: 0;">Coming Soon</h3>
                     </div>
 
                     <div style="padding: 2.5rem; text-align: center;">
@@ -241,10 +245,10 @@
     <section style="padding: 6rem 0; background: var(--bg-section);">
         <div class="container">
             <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: white; margin-bottom: 1rem;">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--text-primary); margin-bottom: 1rem;">
                     Why Choose Websited?
                 </h2>
-                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
                     We're different from other web agencies
                 </p>
             </div>
@@ -252,7 +256,7 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
                 <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-primary);">
                     <div style="font-size: 2.5rem; margin-bottom: 1rem;">🇦🇺</div>
-                    <h3 style="color: white; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">100% Australian</h3>
+                    <h3 style="color: var(--text-primary); font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">100% Australian</h3>
                     <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">
                         Australian owned and operated. All work done locally—no outsourcing, no overseas call centers.
                     </p>
@@ -260,7 +264,7 @@
 
                 <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-primary);">
                     <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
-                    <h3 style="color: white; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">Fast Delivery</h3>
+                    <h3 style="color: var(--text-primary); font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">Fast Delivery</h3>
                     <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">
                         Most websites delivered in 14 days or less. We don't waste time—we get you online fast.
                     </p>
@@ -268,7 +272,7 @@
 
                 <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-primary);">
                     <div style="font-size: 2.5rem; margin-bottom: 1rem;">💰</div>
-                    <h3 style="color: white; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">Transparent Pricing</h3>
+                    <h3 style="color: var(--text-primary); font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">Transparent Pricing</h3>
                     <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">
                         No hidden fees, no surprise charges. The price you see is the price you pay.
                     </p>
@@ -276,7 +280,7 @@
 
                 <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-primary);">
                     <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
-                    <h3 style="color: white; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">Results Focused</h3>
+                    <h3 style="color: var(--text-primary); font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">Results Focused</h3>
                     <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">
                         We build websites that convert visitors into customers. Every design decision has a purpose.
                     </p>
@@ -284,7 +288,7 @@
 
                 <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-primary);">
                     <div style="font-size: 2.5rem; margin-bottom: 1rem;">🛡️</div>
-                    <h3 style="color: white; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">Guaranteed Satisfaction</h3>
+                    <h3 style="color: var(--text-primary); font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">Guaranteed Satisfaction</h3>
                     <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">
                         Not happy with the first draft? Full refund of your deposit. We stand behind our work.
                     </p>
@@ -292,7 +296,7 @@
 
                 <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-primary);">
                     <div style="font-size: 2.5rem; margin-bottom: 1rem;">💬</div>
-                    <h3 style="color: white; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">Real Support</h3>
+                    <h3 style="color: var(--text-primary); font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;">Real Support</h3>
                     <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">
                         Speak to real Australians who understand your business. Support when you need it.
                     </p>
@@ -301,73 +305,75 @@
         </div>
     </section>
 
+    
     <!-- CTA Section -->
-    <section style="padding: 6rem 0; background: var(--gradient-dark); position: relative; overflow: hidden;">
-        <div style="position: absolute; inset: 0; background: url('data:image/svg+xml,<svg width=\"100\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"100\" height=\"100\" fill=\"none\"/><circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"rgba(196,239,23,0.03)\"/></svg>'); opacity: 0.5;"></div>
-
-        <div class="container" style="position: relative; z-index: 2;">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900; color: white; margin-bottom: 1.5rem;">
-                    Ready to Get Started?
-                </h2>
-                <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 3rem; line-height: 1.6;">
-                    Stop losing customers to competitors with better websites. Get your professional website in 14 days.
+    <section class="about-cta-section">
+        <div class="about-cta-bg"></div>
+        <div class="container">
+            <div class="about-cta-content">
+                <span class="about-cta-badge">🚀 Let's Grow Together</span>
+                <h2 class="about-cta-title">Ready to Dominate Your Market?</h2>
+                <p class="about-cta-description">Join 500+ Australian businesses that have transformed their digital presence with Websited. Get a free strategy session and discover untapped growth opportunities.</p>
+                
+                <div class="about-cta-features">
+                    <div class="about-cta-feature">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Free 30-Min Strategy Call</span>
+                    </div>
+                    <div class="about-cta-feature">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Custom Growth Roadmap</span>
+                    </div>
+                    <div class="about-cta-feature">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>No Obligation Quote</span>
+                    </div>
+                </div>
+                
+                <div class="about-cta-buttons">
+                    <a href="/contact/" class="btn btn-primary btn-lg">
+                        <span>Book Your Free Strategy Call</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="tel:+61280001234" class="btn btn-secondary-outline btn-lg">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>Call Us Now</span>
+                    </a>
+                </div>
+                
+                <p class="about-cta-trust">
+                    <span class="stars">★★★★★</span>
+                    Trusted by 500+ businesses · 25+ years experience · 100% Australian
                 </p>
-
-                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 12px; padding: 2rem; text-align: center; flex: 1; min-width: 280px; max-width: 400px;">
-                        <h4 style="color: white; font-size: 1.3rem; font-weight: 800; margin-bottom: 1rem;">Quick Start</h4>
-                        <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">Fill out our brief form and we'll call you within 2 hours</p>
-                        <a href="/contact/" class="btn btn-primary" style="width: 100%; padding: 1rem;">Get Quote</a>
-                    </div>
-
-                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 12px; padding: 2rem; text-align: center; flex: 1; min-width: 280px; max-width: 400px;">
-                        <h4 style="color: white; font-size: 1.3rem; font-weight: 800; margin-bottom: 1rem;">Free Consultation</h4>
-                        <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">Book a 15-minute call to discuss your needs</p>
-                        <a href="/contact/" class="btn btn-primary" style="width: 100%; padding: 1rem;">Schedule Call</a>
-                    </div>
-                </div>
-
-                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
-                    <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.05rem;">
-                        <strong>Email:</strong> <a href="mailto:hello@websited.org" style="color: var(--accent-primary); text-decoration: none;">hello@websited.org</a>
-                    </p>
-                    <p style="color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">
-                        <strong>Hours:</strong> Monday-Friday 9am-5pm AEST
-                    </p>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-logo">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                        <path d="M2 17l10 5 10-5"></path>
-                        <path d="M2 12l10 5 10-5"></path>
-                    </svg>
-                    <h4>Websited</h4>
-                    <p>Simple, professional websites for Australian businesses. Get online in 2 weeks with no hidden costs.</p>
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="/images/blue_site.png" alt="Websited Logo">
+                                        <p>AI-powered digital marketing solutions helping businesses achieve unprecedented growth. 25+ years of expertise.</p>
                     <p class="trading-info"><strong>Websited Digital Marketing</strong></p>
+                    <p class="trading-info">ABN: 47 442 019 725</p>
                 </div>
-                <div class="footer-section">
+                <div class="footer-col">
                     <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about/">About</a></li>
-                        <li><a href="/offers/">Offers</a></li>
+                    <ul class="footer-links">
                         <li><a href="/service/">Services</a></li>
-                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/#industry-solutions">Industries</a></li>
+                        <li><a href="/#why-choose-us">Why Choose Us</a></li>
+                        <li><a href="/#process">Our Process</a></li>
+                        <li><a href="/#testimonials">Testimonials</a></li>
+                        <li><a href="/#faq">FAQ</a></li>
                         <li><a href="/contact/">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-col">
                     <h4>Services</h4>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="/service/ai-assistants/">AI Assistants</a></li>
                         <li><a href="/service/website-development/">Website Development</a></li>
                         <li><a href="/service/seo-local-seo/">SEO & Local SEO</a></li>
@@ -376,20 +382,20 @@
                         <li><a href="/service/growth-strategy-analytics/">Growth Strategy</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-col">
                     <h4>Contact</h4>
                     <p>Email: <a href="mailto:hello@websited.org" class="footer-link">hello@websited.org</a></p>
                     <p>2 Martin Place, Sydney, NSW 2000, Australia</p>
-                    <div class="footer-hours">
+                    <div class="footer-social">
                         <strong>Follow Us:</strong>
-                        <p><a href="https://instagram.com/websited" target="_blank" class="footer-link">Instagram</a></p>
-                        <p><a href="https://facebook.com/websited" target="_blank" class="footer-link">Facebook</a></p>
+                        <p><a href="https://instagram.com/websited" target="_blank" rel="noopener" class="footer-link">Instagram</a> <a href="https://facebook.com/websited" target="_blank" rel="noopener" class="footer-link">Facebook</a></p>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Websited. All rights reserved.</p>
-                <p><strong>Serving Sydney, Melbourne, Brisbane, Perth, Adelaide, Gold Coast, Canberra, Newcastle, Hobart, Geelong, Darwin & Sunshine Coast</strong></p>
+                <p>© 2025 Websited. All rights reserved.</p>
+                <p class="footer-locations"><strong>Serving Sydney, Melbourne, Brisbane & All Australia</strong></p>
+                <p class="footer-disclaimer">Websited is a digital marketing agency specializing in AI-powered growth solutions. Results may vary based on industry, competition, and implementation factors.</p>
             </div>
         </div>
     </footer>

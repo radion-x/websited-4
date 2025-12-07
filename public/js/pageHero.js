@@ -67,7 +67,7 @@ class PageHeroAnimation {
             // Draw particle
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = `rgba(196, 239, 23, ${particle.opacity})`;
+            this.ctx.fillStyle = `rgba(37, 99, 235, ${particle.opacity})`;
             this.ctx.fill();
             
             // Draw connections
@@ -80,7 +80,7 @@ class PageHeroAnimation {
                     this.ctx.beginPath();
                     this.ctx.moveTo(particle.x, particle.y);
                     this.ctx.lineTo(otherParticle.x, otherParticle.y);
-                    this.ctx.strokeStyle = `rgba(196, 239, 23, ${0.2 * (1 - distance / 100)})`;
+                    this.ctx.strokeStyle = `rgba(37, 99, 235, ${0.2 * (1 - distance / 100)})`;
                     this.ctx.lineWidth = 1;
                     this.ctx.stroke();
                 }

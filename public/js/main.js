@@ -52,15 +52,16 @@ if (mobileMenuToggle && navLinks) {
         setHamburgerState(isActive);
     });
 
-    // Handle mobile dropdown toggles
+    // Handle mobile dropdown toggles - ALL dropdowns, not just services
     const mobileDropdowns = document.querySelectorAll('.nav-item-dropdown');
     mobileDropdowns.forEach(dropdown => {
-        const dropdownLink = dropdown.querySelector('a[href*="service"]');
+        const dropdownLink = dropdown.querySelector(':scope > a');
         if (dropdownLink) {
             dropdownLink.addEventListener('click', (e) => {
                 // On mobile, toggle dropdown instead of navigating
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
+                    e.stopPropagation();
                     dropdown.classList.toggle('active');
                     
                     // Close other dropdowns
@@ -250,7 +251,7 @@ document.querySelectorAll('.service-link').forEach(link => {
 // Console welcome message (optional, for developers)
 console.log(
     '%c✨ Websited Digital Marketing',
-    'color: #C4EF17; font-size: 16px; font-weight: bold;'
+    'color: #2563EB; font-size: 16px; font-weight: bold;'
 );
 
 // Handle form input animations
